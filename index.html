@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pokedex-v1.0</title>
+</head>
+<body>
+
+    <header>
+        <div class="pokeTitle">
+            <h1>Welcome to your world of Pokedex</h1>
+        </div>
+        <div class="pokelogo">
+            <img src="images/pokefavicon.png" alt="cute">
+        </div>       
+    </header>
+
+    <div class="search">
+        <input type="search" class="searchBar" placeholder="Search pokemons by name or types">
+    </div>
+
+
+    <div class="pokeTypes selectedGen">
+        <h2>Generations:</h2>
+        <select class="generationSelect">         
+            <option value="0">All</option>
+            <option value="1">Generation 1</option>
+            <option value="2">Generation 2</option>
+            <option value="3">Generation 3</option>
+            <option value="4">Generation 4</option>
+            <option value="5">Generation 5</option>
+            <option value="6">Generation 6</option>
+            <option value="7">Generation 7</option>
+            <option value="8">Generation 8</option>
+            <option value="9">Generation 9</option>
+        </select>        
+    </div>
+
+    <div>
+        <div class="pokeTypes">
+            <h2>Types:</h2>
+            <select name="" class="images" id="typeSelect">
+                <option value="">All</option>
+                <option value="normal">Normal</option>
+                <option value="fire">Fire</option>
+                <option value="water">Water</option>
+                <option value="grass">Grass</option>
+                <option value="flying">Flying</option>
+                <option value="fighting">Fighting</option>
+                <option value="poison">Poison</option>
+                <option value="electric">Electric</option>
+                <option value="ground">Ground</option>
+                <option value="rock">Rock</option>
+                <option value="psychic">Psychic</option>
+                <option value="ice">Ice</option>
+                <option value="bug">Bug</option>
+                <option value="ghost">Ghost</option>
+                <option value="steel">Steel</option>
+                <option value="dragon">Dragon</option>
+                <option value="dark">Dark</option>
+                <option value="fairy">Fairy</option>
+            </select>
+        </div>
+    </div>
+
+
+
+
+    <div>
+        <ul class="pokemonsImage"></ul>
+    </div>
+    
+
+    <script src="main.js"></script>
+</body>
+</html>
