@@ -1,6 +1,6 @@
 const generationSelect = document.querySelector(".generationSelect");
 const searchTab = document.querySelector('.searchBar');
-const typeSelect = document.querySelector("#typeSelect")
+const typeSelect = document.querySelector(".typeSelect")
 
 
 let generations = [
@@ -29,13 +29,17 @@ let pokeData = [];
 
 generationSelect.addEventListener('change', () => {
     const selectedGeneration = generationSelect.value;
-    const generationData = generations[selectedGeneration];
-
+    
     if (selectedGeneration === "0") {
         fetchAllpokemon();
     }
     else {
-        fetchPokemonByGeneration(generationData.limit, generationData.offset)
+        const generationData = generations[selectedGeneration];
+        if(generationData){
+            fetchPokemonByGeneration(generationData.limit, generationData.offset)
+        } else {
+            console.error()
+        }
     }
 });
 
@@ -44,7 +48,7 @@ function fetchAllpokemon() {
         .then((response) => response.json())
         .then((json) => {
             const fetches = json.results.map((i)=> {
-                return fetch(i.url).then((response) => response.json)
+                return fetch(i.url).then((response) => response.json())
             });
 
             Promise.all(fetches).then((response) => {
@@ -93,7 +97,7 @@ function filterPokemonByType(selectedType) {
 
 function searchPokemon() {
     let input = searchTab.value.toLowerCase();
-    let cards = document.querySelectorAll('.cards');
+    let cards = document.querySelectorAll('.pokeCards');
 
     cards.forEach(card => {
         let cardText = card.textContent.toLowerCase();
@@ -106,4 +110,4 @@ function searchPokemon() {
 }
 
 
-searchTab.addEventListener('keyup', searchPokemon);
+searchTab.addEventListener('input', searchPokemon);
