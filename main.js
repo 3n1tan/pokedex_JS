@@ -30,13 +30,13 @@ let pokeData = [];
 generationSelect.addEventListener('change', () => {
     const selectedGeneration = generationSelect.value;
     
-    if (selectedGeneration === "0") {
-        fetchAllpokemon();
+    if (selectedGeneration === "") {
+        console.alert('Please select a generation')
     }
     else {
-        const generationData = generations[selectedGeneration];
-        if(generationData){
-            fetchPokemonByGeneration(generationData.limit, generationData.offset)
+        const generationData = parseInt(selectedGeneration, 10) - 1;
+        if(generations[generationData]){
+            fetchPokemonByGeneration(generations[generationData].limit, generations[generationData].offset)
         } else {
             console.error()
         }
